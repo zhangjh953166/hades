@@ -5,7 +5,8 @@ After=hades-network.service
 Wants=hades-network.service
 
 [Service]
-Type=forking
+Type=dbus
+BusName=@AUTH_VRRP_DBUS_NAME@
 PIDFile=@pkgrunstatedir@/auth-vrrp/keepalived.pid
 KillMode=process
 SyslogIdentifier=hades-auth-vrrp

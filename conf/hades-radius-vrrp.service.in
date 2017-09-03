@@ -5,7 +5,8 @@ After=hades-network.service hades-database.service
 Wants=hades-network.service hades-database.service
 
 [Service]
-Type=forking
+Type=dbus
+BusName=@RADIUS_VRRP_DBUS_NAME@
 PIDFile=@pkgrunstatedir@/radius-vrrp/keepalived.pid
 KillMode=process
 SyslogIdentifier=hades-radius-vrrp
